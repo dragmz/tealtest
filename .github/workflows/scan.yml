@@ -24,4 +24,4 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: dragmz/scan-teal-action@85523736b2156497b8dd90ecb2084c722f857b57
+      - uses: dragmz/scan-teal-action@v0
