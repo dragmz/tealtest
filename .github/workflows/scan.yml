@@ -24,18 +24,4 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Download tealsarif
-        run: curl -LJO https://github.com/dragmz/teal/releases/download/dev/tealsarif_linux_x64
-        
-      - name: Chmod tealsarif
-        run: chmod +x tealsarif_linux_x64
-        
-      - name: Run tealsarif scan
-        run: ./tealsarif_linux_x64 -path . > results.sarif.json
-        
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results.sarif.json
+      - uses: dragmz/scan-teal-action@846985ba97f4875d9377630d8d43b9a82c17136a
