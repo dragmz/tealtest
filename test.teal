@@ -1,3 +1,30 @@
+#pragma version 8
+
+// duplicate
+
+test_duplicate:
+test_duplicate:
+
+// unused
+
+test_unused:
+
+// ops after branch
+
+b skip
+int 1
+skip:
+
+// redundant branch
+
 b test
 test:
-test2:
+
+// infinite loop
+
+infinite:
+b infinite
+
+// pragma misuse
+
+#pragma version 9
